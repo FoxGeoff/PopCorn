@@ -1,0 +1,31 @@
+using Microsoft.EntityFrameworkCore;
+using Popcorn.Entities;
+
+namespace Popcorn.Data
+{
+    public partial class MaterialsContext : DbContext
+    {
+        public DbSet<Adhesive> Adhesives { get; set; }
+        public DbSet<Bolt> Bolts { get; set; }
+        public DbSet<Composite> Composites { get; set; }
+        public DbSet<Curve_Data> Curve_Data { get; set; }
+        public DbSet<Curve_Description> Curve_Description { get; set; }
+        public DbSet<Fastener> Fasteners { get; set; }
+        public DbSet<Fastener_Data> Fastener_Data { get; set; }
+        public DbSet<Fastener_MatGroup> Fastener_MatGroup { get; set; }
+        public DbSet<Fastener_Sheet> Fastener_Sheet { get; set; }
+        public DbSet<Joint_Strength> Joint_Strength { get; set; }
+        public DbSet<Material> Materials { get; set; }
+        public DbSet<Material_LinkNotes> Material_LinkNotes { get; set; }
+        public DbSet<Material_Properties> Material_Properties { get; set; }
+        public DbSet<Material_PropNotes> Material_PropNotes { get; set; }
+        public DbSet<Material_XtraProp> Material_XtraProp { get; set; }
+        public DbSet<Nr> Nrs { get; set; }
+        public DbSet<Nut> Nuts { get; set; }
+        public DbSet<SNCurve> SNCurves { get; set; }
+        public DbSet<SS_LinkTable> SS_LinkTable { get; set; }
+        public DbSet<sysdiagram> sysdiagrams { get; set; }
+        public DbSet<TRF> TRFs { get; set; }                        //todo
+        public DbSet<TRF_LinkTable> TRF_LinkTable { get; set; }     //todo
+    }
+}
