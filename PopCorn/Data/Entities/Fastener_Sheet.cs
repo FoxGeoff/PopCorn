@@ -1,8 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Popcorn.Entities
+namespace Popcorn.Data.Entities
 {
-    public partial class Fastener_Sheet
+    public class Fastener_Sheet
     {
         [StringLength(10)]
         public string JS_ID1 { get; set; }

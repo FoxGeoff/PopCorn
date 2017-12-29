@@ -1,7 +1,7 @@
-namespace Popcorn.Entities
-{
-    using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 
+namespace Popcorn.Data.Entities
+{
     public partial class SS_LinkTable
     {
         [StringLength(40)]

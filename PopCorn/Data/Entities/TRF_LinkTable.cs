@@ -1,8 +1,8 @@
-namespace Popcorn.Entities
-{
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
+namespace Popcorn.Data.Entities
+{
     public partial class TRF_LinkTable
     {
         [StringLength(25)]

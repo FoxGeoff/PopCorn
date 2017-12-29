@@ -1,8 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Popcorn.Entities
+namespace Popcorn.Data.Entities
 {
-    public partial class Fastener_Data
+    public class Fastener_Data
     {
         [StringLength(100)]
         public string Fastener_Specification { get; set; }

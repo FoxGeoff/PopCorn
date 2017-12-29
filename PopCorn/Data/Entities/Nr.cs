@@ -1,8 +1,8 @@
-namespace Popcorn.Entities
-{
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
+namespace Popcorn.Data.Entities
+{
     [Table("Nr")]
     public partial class Nr
     {

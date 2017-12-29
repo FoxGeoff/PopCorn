@@ -1,8 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Popcorn.Entities
+namespace Popcorn.Data.Entities
 {
-    public partial class Fastener_MatGroup
+    public class Fastener_MatGroup
     {
         [StringLength(10)]
         public string MatGroup { get; set; }

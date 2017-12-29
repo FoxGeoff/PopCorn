@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Popcorn.Entities
+namespace Popcorn.Data.Entities
 {
     public partial class Curve_Data
     {

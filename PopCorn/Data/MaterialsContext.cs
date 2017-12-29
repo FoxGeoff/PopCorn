@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Popcorn.Data.Entities;
 using Popcorn.Entities;
 
 namespace Popcorn.Data
@@ -24,8 +25,7 @@ namespace Popcorn.Data
         public DbSet<Nut> Nuts { get; set; }
         public DbSet<SNCurve> SNCurves { get; set; }
         public DbSet<SS_LinkTable> SS_LinkTable { get; set; }
-        public DbSet<sysdiagram> sysdiagrams { get; set; }
-        public DbSet<TRF> TRFs { get; set; }                        //todo
-        public DbSet<TRF_LinkTable> TRF_LinkTable { get; set; }     //todo
+        public DbSet<TRF> TRFs { get; set; }                         
+        public DbSet<TRF_LinkTable> TRF_LinkTable { get; set; }     
     }
 }

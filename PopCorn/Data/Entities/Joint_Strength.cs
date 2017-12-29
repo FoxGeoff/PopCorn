@@ -1,7 +1,8 @@
-namespace Popcorn.Entities
-{
-    using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
+namespace Popcorn.Data.Entities
+{ 
     public partial class Joint_Strength
     {
         [StringLength(50)]

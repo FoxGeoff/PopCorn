@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Popcorn.Entities
+namespace Popcorn.Data.Entities
 {
     [Table("Composite")]
     public partial class Composite

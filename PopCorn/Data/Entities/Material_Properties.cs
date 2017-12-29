@@ -1,8 +1,9 @@
-namespace Popcorn.Entities
-{
-    using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-    public partial class Material_Properties
+namespace Popcorn.Data.Entities
+{
+    public class Material_Properties
     {
         [StringLength(20)]
         public string PMatID { get; set; }
