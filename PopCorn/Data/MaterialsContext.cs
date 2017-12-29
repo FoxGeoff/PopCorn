@@ -4,8 +4,12 @@ using Popcorn.Entities;
 
 namespace Popcorn.Data
 {
-    public partial class MaterialsContext : DbContext
+    public class MaterialsContext : DbContext
     {
+        public MaterialsContext(DbContextOptions options):base(options)
+        {
+        }
+
         public DbSet<Adhesive> Adhesives { get; set; }
         public DbSet<Bolt> Bolts { get; set; }
         public DbSet<Composite> Composites { get; set; }
@@ -25,7 +29,7 @@ namespace Popcorn.Data
         public DbSet<Nut> Nuts { get; set; }
         public DbSet<SNCurve> SNCurves { get; set; }
         public DbSet<SS_LinkTable> SS_LinkTable { get; set; }
-        public DbSet<TRF> TRFs { get; set; }                         
-        public DbSet<TRF_LinkTable> TRF_LinkTable { get; set; }     
+        public DbSet<TRF> TRFs { get; set; }                        //TODO: Get this data as JSON    
+        public DbSet<TRF_LinkTable> TRF_LinkTable { get; set; }     //TODO: Get this data as JSON
     }
 }
