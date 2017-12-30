@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Popcorn.Data.Entities;
 using Popcorn.Entities;
@@ -21,6 +23,12 @@ namespace Popcorn.Data
         public DbSet<Fastener_Sheet> Fastener_Sheet { get; set; }
         public DbSet<Joint_Strength> Joint_Strength { get; set; }
         public DbSet<Material> Materials { get; set; }
+
+        internal IEnumerable<TRF> OrderBy(Func<object, object> p)
+        {
+            throw new NotImplementedException();
+        }
+
         public DbSet<Material_LinkNotes> Material_LinkNotes { get; set; }
         public DbSet<Material_Properties> Material_Properties { get; set; }
         public DbSet<Material_PropNotes> Material_PropNotes { get; set; }

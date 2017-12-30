@@ -117,6 +117,40 @@ private static void SetupConfiguration(WebHostBuilderContext context, IConfigura
 Commit: Add Controller Home/TRF action (no repository)
 ******************************************************
 
+******************************************************
+Checklist - ADD api/trf TRFcontroller (simple)
+******************************************************
+Ref - Checklist: How to create the API pp263
+
+Task #1:	Add [Route("api/[Controller]")] to class 
+Task #2:	Add [HttpGet]
+Task #3:	Test with Postman
+
+	[Route("api/[Controller]")]
+    public class TRFController : Controller
+    {
+        private readonly IMaterialsRepository _repository;
+        private readonly ILogger<TRFController> _logger;
+
+        public TRFController(IMaterialsRepository repository, ILogger<TRFController> logger )
+        {
+            _repository = repository;
+            _logger = logger;
+        }
+
+        [HttpGet]
+        public IActionResult Get()
+        {
+            var TRFs = _repository.GetAllTRFs();
+
+            if (TRFs != null)
+            {
+                return Ok(TRFs.ToList());
+            }
+            return NotFound();
+        }   
+    }
+****End
 
 
 
