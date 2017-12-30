@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Popcorn.Data;
 using Microsoft.EntityFrameworkCore;
+using PopCorn.Services;
 
 namespace PopCorn
 {
@@ -24,6 +25,9 @@ namespace PopCorn
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IMailService, NullMailService>();
+            //TODO: Support for real mail service
+
             services.AddDbContext<MaterialsContext>(cfg => cfg.UseSqlServer(Configuration.GetConnectionString("MaterialDataConnection")));    
             services.AddMvc();
         }
