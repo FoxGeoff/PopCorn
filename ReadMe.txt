@@ -212,6 +212,16 @@ Task #2: Use it to return error message in controller
 Commit: ADD an ApiResponse object for error handling 
 ******************************************************
 
+******************************************************
+Checklist: Add a custom attribute [NoCache]
+******************************************************
+Task #1: Add class... Infrastructure/NoCacheAttribute
+
+Task #2: Add to Controller Action [NoCache]
+
+******************************************************
+Commite: Add a custom attribute [NoCache]
+******************************************************
 
 
 
