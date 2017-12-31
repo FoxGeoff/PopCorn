@@ -11,6 +11,7 @@ using Popcorn.Data;
 using Microsoft.EntityFrameworkCore;
 using PopCorn.Services;
 using PopCorn.Data;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace PopCorn
 {
@@ -34,6 +35,26 @@ namespace PopCorn
             //-- services.AddTransient<MaterialDataSeeder>();
 
             services.AddScoped<IMaterialsRepository, MaterialsRepository>();
+
+            //https://github.com/domaindrivendev/Swashbuckle.AspNetCore
+            //https://localhost:63287/swagger
+            services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("v1", new Info
+                {
+                    Version = "v1",
+                    Title = "Material Data API",
+                    Description = "ASP.NET Core2.x /Angular4.x Material Data API Swagger Documentation",
+                    TermsOfService = "None",
+                    Contact = new Contact { Name = "Geoff Fox", Url = "https://fox-graphics.com" },
+                    License = new License { Name = "MIT", Url = "https://en.wikipedia.org/wiki/MIT_License" }
+                });
+
+                //Add XML comment document by uncommenting the following
+                // var filePath = Path.Combine(PlatformServices.Default.Application.ApplicationBasePath, "MyApi.xml");
+                // options.IncludeXmlComments(filePath);
+
+            });
 
 
 

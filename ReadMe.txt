@@ -220,9 +220,25 @@ Task #1: Add class... Infrastructure/NoCacheAttribute
 Task #2: Add to Controller Action [NoCache]
 
 ******************************************************
-Commite: Add a custom attribute [NoCache]
+Commit: Add a custom attribute [NoCache]
 ******************************************************
+Task #1 Add Nuget Swashbuckle.AspNetCore
 
+Task #2: Add to Startup
+
+Task #3: Add to Conroller Action:
+//In TRFController
+...
+[HttpGet]
+[NoCache]
+ [ProducesResponseType(typeof(List<TRF>), 200)]
+ [ProducesResponseType(typeof(ApiResponse), 400)]
+ public async Task<IActionResult> GetAsync()
+ {
+ ...
+******************************************************
+Commite: Add Swashbuckle.AspNetCore
+******************************************************
 
 
 

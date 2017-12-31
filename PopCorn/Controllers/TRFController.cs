@@ -29,6 +29,8 @@ namespace PopCorn.Controllers
 
         [HttpGet]
         [NoCache]
+        [ProducesResponseType(typeof(List<TRF>), 200)]
+        [ProducesResponseType(typeof(ApiResponse), 400)]
         public async Task<IActionResult> GetAsync()
         {
             try
