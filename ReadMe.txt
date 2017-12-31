@@ -151,8 +151,54 @@ Task #3:	Test with Postman
         }   
     }
 ****End
+******************************************************
+Commit: Add TRFController - GetAllTRFs()
+******************************************************
 
+******************************************************
+Checklist - ADD api/trf TRFcontroller (Async) and DataRepository (Async)
+******************************************************
+//Controller Code
+[HttpGet]
+public async Task<IActionResult> GetAsync()
+{
+    try
+    {
+        var TRFs = await _repository.GetAllTRFs();
 
+        if (TRFs != null)
+        {
+            return Ok(TRFs);
+        }
+        return NotFound();
+    }
+    catch (Exception ex)
+    {
+        _logger.LogError(ex.Message);
+        return BadRequest();
+        //TODO: Add BadRequest(new ApiResponse { Status = false })
+    }
+}
+
+//Repository Code
+public async Task<IEnumerable<TRF>> GetAllTRFs()
+        {
+            return await _context.TRFs
+                .OrderBy(t => t.TRF_Page)
+                .ThenBy(t => t.PropertyVal)
+                .ThenBy(t => t.Hours)
+                .ToListAsync();
+        }
+
+//IRepository Code
+public interface IMaterialsRepository
+    {
+        Task<IEnumerable<TRF>> GetAllTRFs();
+		...
+	}
+******************************************************
+Commit: ADD api/trf TRFcontroller (Async) and DataRepository (Async)
+******************************************************
 
 
 

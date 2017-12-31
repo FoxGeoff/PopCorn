@@ -1,12 +1,13 @@
 ﻿using Popcorn.Data.Entities;
 using Popcorn.Entities;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace PopCorn.Data
 {
     public interface IMaterialsRepository
     {
-        IEnumerable<TRF> GetAllTRFs();
+        Task<IEnumerable<TRF>> GetAllTRFs();
         IEnumerable<TRF> GetTRFsByCategory(string category);
 
         IEnumerable<TRF_LinkTable> GetAllTRF_LinkTables(bool includeItems);

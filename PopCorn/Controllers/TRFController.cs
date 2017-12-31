@@ -26,15 +26,24 @@ namespace PopCorn.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public async Task<IActionResult> GetAsync()
         {
-            var TRFs = _repository.GetAllTRFs();
-
-            if (TRFs != null)
+            try
             {
-                return Ok(TRFs.ToList());
+                var TRFs = await _repository.GetAllTRFs();
+
+                if (TRFs != null)
+                {
+                    return Ok(TRFs);
+                }
+                return NotFound();
             }
-            return NotFound();
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return BadRequest();
+                //TODO: Add BadRequest(new ApiResponse { Status = false })
+            }
         }   
     }
 }

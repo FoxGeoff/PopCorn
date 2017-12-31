@@ -6,6 +6,7 @@ using Popcorn.Data.Entities;
 using Popcorn.Entities;
 using Popcorn.Data;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
 
 namespace PopCorn.Data
 {
@@ -30,15 +31,13 @@ namespace PopCorn.Data
             throw new NotImplementedException();
         }
 
-        //TODO: Add Async
-        //TODO: Add Logging
-        public IEnumerable<TRF> GetAllTRFs()
+        public async Task<IEnumerable<TRF>> GetAllTRFs()
         {
-            return _context.TRFs
+            return await _context.TRFs
                 .OrderBy(t => t.TRF_Page)
                 .ThenBy(t => t.PropertyVal)
                 .ThenBy(t => t.Hours)
-                .ToList();
+                .ToListAsync();
         }
 
         public IEnumerable<TRF_LinkTable> GetAllTRF_LinkTables(bool includeItems)
