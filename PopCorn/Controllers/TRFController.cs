@@ -7,6 +7,7 @@ using PopCorn.Data;
 using Microsoft.Extensions.Logging;
 using Popcorn.Entities;
 using System.Collections;
+using PopCorn.Data.Entities;
 
 //TODO: Add AutoMapper and ViewModels
 //TODO: Add Async
@@ -41,8 +42,7 @@ namespace PopCorn.Controllers
             catch (Exception ex)
             {
                 _logger.LogError(ex.Message);
-                return BadRequest();
-                //TODO: Add BadRequest(new ApiResponse { Status = false })
+                return BadRequest(new ApiResponse { Status = false });
             }
         }   
     }

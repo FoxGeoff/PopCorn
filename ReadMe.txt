@@ -199,6 +199,20 @@ public interface IMaterialsRepository
 ******************************************************
 Commit: ADD api/trf TRFcontroller (Async) and DataRepository (Async)
 ******************************************************
+// TODO:
+******************************************************
+Checklist: ADD an ApiResponse object for error handling 
+******************************************************
+Task #1 Create Data/ApiResonse class
+
+Task #2: Use it to return error message in controller
+	return BadRequest(new ApiResponse { Status = false });
+
+******************************************************
+Commit: ADD an ApiResponse object for error handling 
+******************************************************
+
+
 
 
 
