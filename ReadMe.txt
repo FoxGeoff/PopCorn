@@ -237,7 +237,7 @@ Task #3: Add to Conroller Action:
  {
  ...
 ******************************************************
-Commite: Add Swashbuckle.AspNetCore
+Commit: Add Swashbuckle.AspNetCore
 ******************************************************
 
 

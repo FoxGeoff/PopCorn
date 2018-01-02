@@ -37,7 +37,7 @@ namespace PopCorn
             services.AddScoped<IMaterialsRepository, MaterialsRepository>();
 
             //https://github.com/domaindrivendev/Swashbuckle.AspNetCore
-            //https://localhost:63287/swagger
+            //https://localhost:63287/swagger/ui/index.html
             services.AddSwaggerGen(options =>
             {
                 options.SwaggerDoc("v1", new Info
@@ -55,8 +55,6 @@ namespace PopCorn
                 // options.IncludeXmlComments(filePath);
 
             });
-
-
 
             services.AddMvc();
         }
@@ -79,6 +77,28 @@ namespace PopCorn
 
             app.UseStaticFiles();
 
+            //***************************************************************************
+            //This would need to be locked down as needed (very open right now)
+            app.UseCors((corsPolicyBuilder) =>
+            {
+                corsPolicyBuilder.AllowAnyOrigin();
+                corsPolicyBuilder.AllowAnyMethod();
+                corsPolicyBuilder.AllowAnyHeader();
+                corsPolicyBuilder.WithExposedHeaders("X-InlineCount");
+            });
+
+            // Enable middleware to serve generated Swagger as a JSON endpoint
+            app.UseSwagger();
+
+            // Enable middleware to serve swagger-ui assets (HTML, JS, CSS etc.)
+            // Visit http://localhost:5000/swagger
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
+            //***************************************************************************
+
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
@@ -89,6 +109,8 @@ namespace PopCorn
                     name: "spa-fallback",
                     defaults: new { controller = "Home", action = "Index" });
             });
+
+            
         }
     }
 }

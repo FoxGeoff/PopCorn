@@ -9,6 +9,7 @@ using Popcorn.Entities;
 using System.Collections;
 using PopCorn.Data.Entities;
 using PopCorn.Infrastructure;
+using Popcorn.Data.Entities;
 
 //TODO: Add AutoMapper and ViewModels
 //TODO: Add Async

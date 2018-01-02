@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Popcorn.Data.Entities;
 using Popcorn.Entities;
 using System;
 using System.Collections.Generic;
