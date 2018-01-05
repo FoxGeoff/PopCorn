@@ -39,7 +39,7 @@ namespace PopCorn.Controllers
         {
             try
             {
-                var TRFs = await _repository.GetAllTrf();
+                var TRFs = await _repository.GetAllTRF();
 
                 if (TRFs != null)
                 {
@@ -62,7 +62,7 @@ namespace PopCorn.Controllers
         {
             try
             {
-                var TRFs = await _repository.GetAllTrf_LinkTables();
+                var TRFs = await _repository.GetAllTrfViewModel();
 
                 if (TRFs != null)
                 {
@@ -87,7 +87,7 @@ namespace PopCorn.Controllers
         {
             try
             {
-                var TRFs = await _repository.GetAllTrf_LinkTables();
+                var TRFs = await _repository.GetAllTrfViewModel();
 
                 if (TRFs != null)
                 {

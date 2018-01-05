@@ -33,7 +33,7 @@ namespace PopCorn.Data
             throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<TRF>> GetAllTrf()
+        public async Task<IEnumerable<TRF>> GetAllTRF()
         {
             return await _context.TRFs
                 .OrderBy(t => t.TRF_Page)
@@ -43,7 +43,7 @@ namespace PopCorn.Data
                 .ToListAsync();
         }
 
-        public async Task<IEnumerable<TRF_LinkTable>> GetAllTrf_LinkTables()
+        public async Task<IEnumerable<TRF_LinkTable>> GetAllTRF_LinkTable()
         {
             return await _context.TRF_LinkTable
                .OrderBy(t => t.TRF_Page)
@@ -56,8 +56,8 @@ namespace PopCorn.Data
         /* ViewModels Mehods */
         public async Task<IEnumerable<TrfViewModel>> GetAllTrfViewModel()
         {
-            var trfBaseVals = await GetAllTrf();
-            var trfLinkVals = await GetAllTrf_LinkTables();
+            var trfBaseVals = await GetAllTRF();
+            var trfLinkVals = await GetAllTRF_LinkTable();
 
             var trfRefercenceVals = from tb in trfBaseVals
                                    join tl in trfLinkVals on tb.TRF_ID equals tl.TRF_ID
@@ -74,5 +74,16 @@ namespace PopCorn.Data
 
             return trfRefercenceVals;
         }
+
+        public IEnumerable<TrfChart> GetAllTrfChart()
+        {
+            return null;
+        }
+    }
+
+    public class TrfChart
+    {
+        public string Title { get; set; }
+        public IEnumerable<TrfViewModel> TrfPoints { get; set; }
     }
 }

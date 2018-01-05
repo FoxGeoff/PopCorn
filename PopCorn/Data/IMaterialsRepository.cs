@@ -1,5 +1,6 @@
 ﻿using Popcorn.Data.Entities;
 using Popcorn.Entities;
+using PopCorn.Data.ViewModel;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -7,8 +8,10 @@ namespace PopCorn.Data
 {
     public interface IMaterialsRepository
     {
-        Task<IEnumerable<TRF>> GetAllTrf();
-        Task<IEnumerable<TRF_LinkTable>> GetAllTrf_LinkTables();
+        Task<IEnumerable<TRF>> GetAllTRF();
+        Task<IEnumerable<TRF_LinkTable>> GetAllTRF_LinkTable();
+        Task<IEnumerable<TrfViewModel>> GetAllTrfViewModel();
+
 
         //TODO: Check if we need to impliment these MaterialsRepository methods
 
