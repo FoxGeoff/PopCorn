@@ -7,15 +7,17 @@ namespace PopCorn.Data
 {
     public interface IMaterialsRepository
     {
-        Task<IEnumerable<TRF>> GetAllTRFs();
-        IEnumerable<TRF> GetTRFsByCategory(string category);
+        Task<IEnumerable<TRF>> GetAllTrf();
+        Task<IEnumerable<TRF_LinkTable>> GetAllTrf_LinkTables();
 
-        IEnumerable<TRF_LinkTable> GetAllTRF_LinkTables(bool includeItems);
-        IEnumerable<TRF_LinkTable> GetAllTRF_LinkTablesByUser(string username, bool includeItems);
-        TRF_LinkTable GetTRF_LinkTableById(string username, int id);
-        void AddTRF_LinkTable(TRF_LinkTable newTRF_LinkTable);
+        //TODO: Check if we need to impliment these MaterialsRepository methods
 
-        bool SaveAll();
-        void AddEntity(object model);
+        //IEnumerable<TRF> GetTRFsByCategory(string category);
+        //IEnumerable<TRF_LinkTable> GetAllTRF_LinkTables(bool includeItems);
+        //IEnumerable<TRF_LinkTable> GetAllTRF_LinkTablesByUser(string username, bool includeItems);
+        //TRF_LinkTable GetTRF_LinkTableById(string username, int id);
+        //void AddTRF_LinkTable(TRF_LinkTable newTRF_LinkTable);
+        //bool SaveAll();
+        //void AddEntity(object model);
     }
 }
